@@ -1,0 +1,3 @@
+Cost of bouquet =31
+Number of roses =5
+Number of chamomiles = 2
