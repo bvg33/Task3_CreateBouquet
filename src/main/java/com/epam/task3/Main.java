@@ -9,7 +9,6 @@ import com.epam.task3.exceptions.DataException;
 import com.epam.task3.exceptions.NoSuchRealizationOfInterfaceException;
 import com.epam.task3.flowers.BasketForFlowers;
 import com.epam.task3.flowers.Flower;
-import com.epam.task3.view.ConsoleResultPrinter;
 import com.epam.task3.view.ResultPrinter;
 import com.epam.task3.view.ResultPrinterFactory;
 
@@ -18,7 +17,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws DataException, NoSuchRealizationOfInterfaceException {
         //ввод
-        DataAcquirer acquirer = DataAcquirerFactory.createDataAcquirer(TypesOfDataAcquirers.FILE);
+        DataAcquirer acquirer = DataAcquirerFactory.createDataAcquirer(TypesOfDataAcquirers.CONSOLE);
         int numberOfFlowersInBouquet = acquirer.getNumber();
         //создание букета
         BasketForFlowers basket = new BasketForFlowers();
@@ -28,7 +27,7 @@ public class Main {
         List<Flower> bouquet = basket.getBouquet();
         int resultCost = calculator.calculateCost(bouquet);
         //вывод
-        ResultPrinter printer = ResultPrinterFactory.createResultPrinter(TypesOfResultPrinters.FILE);
+        ResultPrinter printer = ResultPrinterFactory.createResultPrinter(TypesOfResultPrinters.CONSOLE);
         int numberOfCham = basket.getNumberOfCham();
         int numberOfRoses = basket.getNumberOfRoses();
         printer.printResult(resultCost, numberOfCham, numberOfRoses);

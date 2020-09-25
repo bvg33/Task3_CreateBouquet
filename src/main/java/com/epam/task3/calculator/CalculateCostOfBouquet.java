@@ -5,7 +5,7 @@ import com.epam.task3.flowers.Flower;
 import java.util.List;
 
 public class CalculateCostOfBouquet {
-    public int calculateCost(List<Flower> bouquet) {
+    public int calculateCost(List<? extends Flower> bouquet) {
         int sum = 0;
         for (Flower flower : bouquet) {
             sum += flower.getCost();

@@ -17,18 +17,14 @@ public class BasketForFlowers {
         this.bouquet = bouquet;
     }
 
-    public void addToBouquet(Flower someFlower) {
-        bouquet.add(someFlower);
-    }
-
     public void createBouquet(int numberOfFlowers) {
         Random random = new Random();
         for (int i = 0; i < numberOfFlowers; i++) {
             if (random.nextInt(50) % 2 == 0) {
-                addToBouquet(new Rose());
+                new Rose().addToBouquet(bouquet);
                 numberOfRoses++;
             } else {
-                addToBouquet(new Chamomile());
+                new Chamomile().addToBouquet(bouquet);
                 numberOfCham++;
             }
         }
