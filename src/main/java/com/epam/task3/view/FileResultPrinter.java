@@ -14,11 +14,9 @@ public class FileResultPrinter implements ResultPrinter {
     }
 
     @Override
-    public void printResult(int costOfBouquet, int numberOfChamomiles, int numberOfRoses) throws DataException {
+    public void printResult(int costOfBouquet) throws DataException {
         String line="";
-        line="Cost of bouquet ="+costOfBouquet+'\n'+
-        "Number of roses ="+numberOfRoses+'\n'+
-        "Number of chamomiles = "+numberOfChamomiles+'\n';
+        line="Cost of this bouquet ="+costOfBouquet+'\n';
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write(line);
         } catch (IOException e) {

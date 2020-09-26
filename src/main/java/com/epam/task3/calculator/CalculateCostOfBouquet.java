@@ -1,6 +1,6 @@
 package com.epam.task3.calculator;
 
-import com.epam.task3.flowers.Flower;
+import com.epam.task3.model.Flower;
 
 import java.util.List;
 

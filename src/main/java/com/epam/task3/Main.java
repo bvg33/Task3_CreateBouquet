@@ -1,14 +1,12 @@
 package com.epam.task3;
 
 import com.epam.task3.calculator.CalculateCostOfBouquet;
-import com.epam.task3.data.DataAcquirer;
-import com.epam.task3.data.DataAcquirerFactory;
-import com.epam.task3.enums.TypesOfDataAcquirers;
+import com.epam.task3.enums.TypesOfFlowers;
 import com.epam.task3.enums.TypesOfResultPrinters;
 import com.epam.task3.exceptions.DataException;
 import com.epam.task3.exceptions.NoSuchRealizationOfInterfaceException;
-import com.epam.task3.flowers.BasketForFlowers;
-import com.epam.task3.flowers.Flower;
+import com.epam.task3.model.BasketForFlowers;
+import com.epam.task3.model.Flower;
 import com.epam.task3.view.ResultPrinter;
 import com.epam.task3.view.ResultPrinterFactory;
 
@@ -16,20 +14,18 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws DataException, NoSuchRealizationOfInterfaceException {
-        //ввод
-        DataAcquirer acquirer = DataAcquirerFactory.createDataAcquirer(TypesOfDataAcquirers.CONSOLE);
-        int numberOfFlowersInBouquet = acquirer.getNumber();
         //создание букета
+        Flower rose=new Flower(5,TypesOfFlowers.ROSE);
+        Flower chamomile=new Flower(3,TypesOfFlowers.CHAMOMILE);
+        Flower lily=new Flower(4,TypesOfFlowers.LILY);
         BasketForFlowers basket = new BasketForFlowers();
-        basket.createBouquet(numberOfFlowersInBouquet);
+        basket.addToBouquet(rose,chamomile,lily);
         //подсчет стоимости букета
         CalculateCostOfBouquet calculator = new CalculateCostOfBouquet();
         List<Flower> bouquet = basket.getBouquet();
         int resultCost = calculator.calculateCost(bouquet);
         //вывод
-        ResultPrinter printer = ResultPrinterFactory.createResultPrinter(TypesOfResultPrinters.CONSOLE);
-        int numberOfCham = basket.getNumberOfCham();
-        int numberOfRoses = basket.getNumberOfRoses();
-        printer.printResult(resultCost, numberOfCham, numberOfRoses);
+        ResultPrinter printer = ResultPrinterFactory.createResultPrinter(TypesOfResultPrinters.FILE);
+        printer.printResult(resultCost);
     }
 }
