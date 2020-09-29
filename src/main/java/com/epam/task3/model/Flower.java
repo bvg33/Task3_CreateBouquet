@@ -6,9 +6,10 @@ public class Flower {
 
     private int cost;
     private TypesOfFlowers typeOfFlower;
-    public Flower(int cost,TypesOfFlowers typeOfFlower) {
+
+    public Flower(int cost, TypesOfFlowers typeOfFlower) {
         this.cost = cost;
-        this.typeOfFlower=typeOfFlower;
+        this.typeOfFlower = typeOfFlower;
     }
 
     public int getCost() {

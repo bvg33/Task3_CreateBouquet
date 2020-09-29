@@ -4,7 +4,7 @@ import com.epam.task3.enums.TypesOfResultPrinters;
 import com.epam.task3.exceptions.NoSuchRealizationOfInterfaceException;
 
 public class ResultPrinterFactory {
-    private static final String FILENAME = "src/main/resources/output.txt";
+    private static final String FILENAME = "output.txt";
 
     public static ResultPrinter createResultPrinter(TypesOfResultPrinters types) throws NoSuchRealizationOfInterfaceException {
         ResultPrinter printerToReturn = null;

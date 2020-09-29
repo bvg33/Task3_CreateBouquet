@@ -15,11 +15,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws DataException, NoSuchRealizationOfInterfaceException {
         //создание букета
-        Flower rose=new Flower(5,TypesOfFlowers.ROSE);
-        Flower chamomile=new Flower(3,TypesOfFlowers.CHAMOMILE);
-        Flower lily=new Flower(4,TypesOfFlowers.LILY);
+        Flower rose = new Flower(5, TypesOfFlowers.ROSE);
+        Flower chamomile = new Flower(3, TypesOfFlowers.CHAMOMILE);
+        Flower lily = new Flower(4, TypesOfFlowers.LILY);
         BasketForFlowers basket = new BasketForFlowers();
-        basket.addToBouquet(rose,chamomile,lily);
+        basket.addToBouquet(rose, chamomile, lily);
         //подсчет стоимости букета
         CalculateCostOfBouquet calculator = new CalculateCostOfBouquet();
         List<Flower> bouquet = basket.getBouquet();

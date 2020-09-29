@@ -10,11 +10,12 @@ public class BasketForFlowers {
         return bouquet;
     }
 
-    public void removeFromBouquet(Flower flower){
+    public void removeFromBouquet(Flower flower) {
         bouquet.remove(flower);
     }
-    public void addToBouquet(Flower...flowers){
-        for(Flower flower:flowers){
+
+    public void addToBouquet(Flower... flowers) {
+        for (Flower flower : flowers) {
             bouquet.add(flower);
         }
     }

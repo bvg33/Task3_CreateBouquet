@@ -5,10 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class TestFileResultPrinter {
     private static final String FILENAME="src/test/resources/output.txt";
